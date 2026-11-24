@@ -40,7 +40,6 @@ def cargar_clases():
 def preparar_imagen(img):
     img = img.convert("RGB").resize(IMG_SIZE)
     arr = np.array(img, dtype=np.float32)
-    arr = tf.keras.applications.mobilenet_v2.preprocess_input(arr)
     return np.expand_dims(arr, axis=0)
 
 def predecir(img):
